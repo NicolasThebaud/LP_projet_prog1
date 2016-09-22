@@ -13,7 +13,7 @@ public class Camera extends DispositifAcquisition {
 	 * @param megapixel Le nombre de megapixel de l'appareil
 	 * @param res La résolution de l'appareil
 	 */
-	protected Camera(String ref, String marque, String intitule, double prixJ,
+	public Camera(String ref, String marque, String intitule, double prixJ,
 			int nbStock, String typeObj, double megapixel, String res) {
 		super(ref, marque, intitule, prixJ, nbStock, typeObj, megapixel, res);
 	}

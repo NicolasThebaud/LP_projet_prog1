@@ -13,7 +13,7 @@ public class Reflecteur extends AccessoireLumiere {
 	 * @param nbStock Le nb de produit disponible en stock
 	 * @param taille La taille du réflécteur (<i>formatté : xxx*xxx</i>)
 	 */
-	protected Reflecteur(String ref, String marque, String intitule, double prixJ, int nbStock, double taille) {
+	public Reflecteur(String ref, String marque, String intitule, double prixJ, int nbStock, double taille) {
 		super(ref, marque, intitule, prixJ, nbStock);
 		this.taille = taille;
 	}

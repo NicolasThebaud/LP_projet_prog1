@@ -13,7 +13,7 @@ public class FondStudio extends AccessoireLumiere {
 	 * @param nbStock Le nb de produit disponible en stock
 	 * @param taille La taille du panneau (<i>formatté : xxx*xxx</i>)
 	 */
-	protected FondStudio(String ref, String marque, String intitule,
+	public FondStudio(String ref, String marque, String intitule,
 			double prixJ, int nbStock, int taille) {
 		super(ref, marque, intitule, prixJ, nbStock);
 		this.taille = taille;

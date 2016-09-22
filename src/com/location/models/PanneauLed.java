@@ -13,7 +13,7 @@ public class PanneauLed extends AccessoireLumiere {
 	 * @param nbStock Le nb de produit disponible en stock
 	 * @param nbLed Le nombre de LED composants le panneau
 	 */
-	protected PanneauLed(String ref, String marque, String intitule,
+	public PanneauLed(String ref, String marque, String intitule,
 			double prixJ, int nbStock, int nbLed) {
 		super(ref, marque, intitule, prixJ, nbStock);
 		this.nbLed = nbLed;

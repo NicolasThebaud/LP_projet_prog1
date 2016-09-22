@@ -10,7 +10,7 @@ public class Micro extends Son{
 	 * @param prixJ Le prix/Jour de location du produit
 	 * @param nbStock Le nb de produit disponible en stock
 	 */
-	protected Micro(String ref, String marque, String intitule, double prixJ,
+	public Micro(String ref, String marque, String intitule, double prixJ,
 			int nbStock) {
 		super(ref, marque, intitule, prixJ, nbStock);
 	}

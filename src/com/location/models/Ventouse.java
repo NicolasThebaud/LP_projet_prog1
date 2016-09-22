@@ -10,7 +10,7 @@ public class Ventouse extends MaterielTournage {
 	 * @param prixJ Le prix/Jour de location du produit
 	 * @param nbStock Le nb de produit disponible en stock
 	 */
-	protected Ventouse(String ref, String marque, String intitule,
+	public Ventouse(String ref, String marque, String intitule,
 			double prixJ, int nbStock) {
 		super(ref, marque, intitule, prixJ, nbStock);
 	}

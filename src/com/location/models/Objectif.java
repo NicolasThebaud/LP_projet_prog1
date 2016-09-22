@@ -15,7 +15,7 @@ public class Objectif extends Produit {
 	 * @param prixJ Le prix/Jour de location du produit
 	 * @param nbStock Le nb de produit disponible en stock
 	 */
-	protected Objectif (String ref, String marque, String intitule, double prixJ, int nbStock) {
+	public Objectif (String ref, String marque, String intitule, double prixJ, int nbStock) {
 		super(ref, marque, intitule, prixJ, nbStock );
 		listeModel = new TreeSet<String>();
 	}

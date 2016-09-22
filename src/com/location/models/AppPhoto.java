@@ -13,7 +13,7 @@ public class AppPhoto extends DispositifAcquisition {
 	 * @param megapixel Le nombre de megapixel de l'appareil
 	 * @param res La résolution de l'appareil
 	 */
-	protected AppPhoto(String ref, String marque, String intitule, 
+	public AppPhoto(String ref, String marque, String intitule, 
 			double prixJ, int nbStock, String typeObj, double megapixel, String res) {
 		super(ref, marque, intitule, prixJ, nbStock, typeObj, megapixel, res);
 	}
