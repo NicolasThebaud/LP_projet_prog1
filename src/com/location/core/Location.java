@@ -50,11 +50,9 @@ public class Location {
 
 	public void affichage() {
 		System.out.println("Location contracté par "+this.client.toString());
+		System.out.println("("+getDateDebut()+"-"+getDateFin()+")");
 		System.out.println("Produit concernés :");
-		for (Produit p : listProd) {
-			System.out.println("\t"+"* "+p.toString());
-		}
-		System.out.println("\r\n");
+		for (Produit p : listProd) System.out.println("\t"+"* "+p.toString());
 		System.out.println("Montant total de la location :"+getMontant()+"€");
 	}
 	
