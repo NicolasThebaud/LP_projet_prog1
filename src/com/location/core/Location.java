@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.location.controllers.LocationManager;
 import com.location.models.Produit;
 
 
@@ -14,7 +15,7 @@ public class Location {
 	private Client client;
 	private Double montant;
 	private ArrayList<? extends Produit> listProd;
-	private String UUID;/**/
+	private final String ID = LocationManager.gen();
 	
 	public Location (Date dateDebut, Date dateFin, Client client, Double montant, Produit[] listProd) {
 		this.dateDebut = dateDebut;
@@ -25,7 +26,7 @@ public class Location {
 	}
 	
 	public String getUUID() {
-		return this.UUID;
+		return this.ID;
 	}
 
 	public Date getDateDebut() {
