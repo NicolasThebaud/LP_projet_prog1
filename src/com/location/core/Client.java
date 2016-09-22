@@ -1,11 +1,8 @@
 package com.location.core;
 
-import java.util.ArrayList;
-
 public class Client {
 
 	private String nom, prenom, telephone;
-	private ArrayList<Location> locations;
 	
 	/**
 	 * Constructeur
@@ -17,7 +14,6 @@ public class Client {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
-		this.locations = new ArrayList<Location>();
 	}
 
 	public String getNom() {
