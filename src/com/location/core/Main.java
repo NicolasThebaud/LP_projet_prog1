@@ -15,7 +15,7 @@ public class Main {
 		Magasin magasin = new Magasin();
 		
 		//Création de quelques références de produits
-		Objectif objectif1 = new Objectif("456def", "Canon", "ultra zoom 3000", 7, 12);
+		Objectif objectif1 = new Objectif("456def", "Canon", "ultra zoom 3000", 7, 12, "24-36mm");
 		Camera cam = new Camera("abc123", "Canon", "super x80", 50, 8, objectif1, 14, "1024*768");
 		Trepier pied = new Trepier("ghi456", "Pied2000", "superpod", 15, 20);
 		PanneauLed led = new PanneauLed("xyz089", "Philips", "UltraLED", 90, 3, 65536);
