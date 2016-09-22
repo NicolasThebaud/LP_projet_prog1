@@ -52,4 +52,10 @@ public class Magasin {
 			}
 		}
 	}
+	
+	public Produit getProdByRef(String ref) throws Exception {
+		for(Produit p : this.listProd)
+			if(p.getReference().equals(ref)) return p;
+		throw new Exception("Produit indispo");
+	}
 }
