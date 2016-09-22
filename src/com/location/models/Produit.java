@@ -8,6 +8,14 @@ public abstract class Produit {
 	protected double prixJ;
 	protected int nbStock;
 	
+	/**
+	 * Constructeur
+	 * @param ref La référence du produit
+	 * @param marque La marque du produit
+	 * @param intitule Le nom du produit
+	 * @param prixJ Le prix/Jour de location du produit
+	 * @param nbStock Le nb de produit disponible en stock
+	 */
 	protected Produit( String ref, String marque, String intitule, double prixJ, int nbStock) {
 		this.ref = ref;
 		this.marque = marque;

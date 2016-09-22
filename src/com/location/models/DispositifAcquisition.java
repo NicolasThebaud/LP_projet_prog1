@@ -3,13 +3,25 @@ package com.location.models;
 public abstract class DispositifAcquisition extends Produit {
 
 	protected String typeObj;
-	protected double nbPixel;
+	protected double megapixel;
 	protected String res;
 	
-	protected DispositifAcquisition (String ref, String marque, String intitule, double prixJ, int nbStock, String typeObj, double nbPixel, String res) {
+	/**
+	 * Constructeur
+	 * @param ref La référence du produit
+	 * @param marque La marque du produit
+	 * @param intitule Le nom du produit
+	 * @param prixJ Le prix/Jour de location du produit
+	 * @param nbStock Le nb de produit disponible en stock
+	 * @param typeObj Le type d'objectif (Objet <b>Objectif</b>) associé
+	 * @param megapixel Le nombre de megapixel de l'appareil
+	 * @param res La résolution de l'appareil
+	 */
+	protected DispositifAcquisition (String ref, String marque, String intitule, 
+			double prixJ, int nbStock, String typeObj, double megapixel, String res) {
 		super(ref, marque, intitule, prixJ, nbStock );
 		this.typeObj = typeObj;
-		this.nbPixel = nbPixel;
+		this.megapixel = megapixel;
 		this.res = res;
 	}
 
@@ -22,11 +34,11 @@ public abstract class DispositifAcquisition extends Produit {
 	}
 
 	public double getNbPixel() {
-		return nbPixel;
+		return megapixel;
 	}
 
 	public void setNbPixel(double nbPixel) {
-		this.nbPixel = nbPixel;
+		this.megapixel = nbPixel;
 	}
 
 	public String getRes() {
