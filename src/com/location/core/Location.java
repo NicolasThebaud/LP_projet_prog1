@@ -1,11 +1,10 @@
 package com.location.core;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import com.location.controllers.LocationManager;
 import com.location.models.Produit;
+import java.util.Date;
 
 
 public class Location {
@@ -13,16 +12,16 @@ public class Location {
 	private Date dateDebut;
 	private Date dateFin;
 	private Client client;
-	private Double montant;
+	private Double montant = 0d;
 	private ArrayList<? extends Produit> listProd;
 	private final String ID = LocationManager.gen();
 	
-	public Location (Date dateDebut, Date dateFin, Client client, Double montant, Produit[] listProd) {
+	public Location (Date dateDebut, Date dateFin, Client client, Produit[] listProd) {
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.client = client;
-		this.montant = montant;
 		this.listProd = new ArrayList<Produit>(Arrays.asList(listProd));
+		for(Produit prod : listProd) this.montant += prod.getPrixJour();
 	}
 	
 	public String getUUID() {
@@ -48,11 +47,15 @@ public class Location {
 	public ArrayList<? extends Produit> getListProd() {
 		return listProd;
 	}
-	
+
 	public void affichage() {
+		System.out.println("Location contracté par "+this.client.toString());
+		System.out.println("Produit concernés :");
 		for (Produit p : listProd) {
-			System.out.println(p.getReference() + " : "+ p.getIntitule());
+			System.out.println("\t"+"* "+p.toString());
 		}
+		System.out.println("\r\n");
+		System.out.println("Montant total de la location :"+getMontant()+"€");
 	}
 	
 }

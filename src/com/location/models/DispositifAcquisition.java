@@ -2,7 +2,7 @@ package com.location.models;
 
 public abstract class DispositifAcquisition extends Produit {
 
-	protected String typeObj;
+	protected Objectif typeObj;
 	protected double megapixel;
 	protected String res;
 	
@@ -18,18 +18,18 @@ public abstract class DispositifAcquisition extends Produit {
 	 * @param res La résolution de l'appareil
 	 */
 	protected DispositifAcquisition (String ref, String marque, String intitule, 
-			double prixJ, int nbStock, String typeObj, double megapixel, String res) {
+			double prixJ, int nbStock, Objectif typeObj, double megapixel, String res) {
 		super(ref, marque, intitule, prixJ, nbStock );
 		this.typeObj = typeObj;
 		this.megapixel = megapixel;
 		this.res = res;
 	}
 
-	public String getTypeObj() {
+	public Objectif getTypeObj() {
 		return typeObj;
 	}
 
-	public void setTypeObj(String typeObj) {
+	public void setTypeObj(Objectif typeObj) {
 		this.typeObj = typeObj;
 	}
 
@@ -49,5 +49,7 @@ public abstract class DispositifAcquisition extends Produit {
 		this.res = res;
 	}
 	
-	
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock + ", " + this.typeObj + ", " + this.megapixel + ", "+ this.res;
+	}
 }

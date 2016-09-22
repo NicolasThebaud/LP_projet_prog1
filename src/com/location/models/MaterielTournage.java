@@ -13,4 +13,8 @@ public abstract class MaterielTournage extends Produit {
 	protected MaterielTournage (String ref, String marque, String intitule, double prixJ, int nbStock) {
 		super(ref, marque, intitule, prixJ, nbStock );
 	}
+	
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock;
+	}
 }

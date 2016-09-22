@@ -15,4 +15,7 @@ public class Grue extends MaterielTournage {
 		super(ref, marque, intitule, prixJ, nbStock);
 	}
 
+	public String toString() {
+		return super.toString();
+	}
 }

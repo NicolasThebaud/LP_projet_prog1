@@ -27,33 +27,40 @@ public abstract class Produit {
 	public String getReference() {
 		return ref;
 	}
+	
 	public void setReference(String reference) {
 		this.ref = reference;
 	}
+	
 	public String getMarque() {
 		return marque;
 	}
+	
 	public void setMarque(String marque) {
 		this.marque = marque;
 	}
+	
 	public String getIntitule() {
 		return intitule;
 	}
+	
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
+	
 	public double getPrixJour() {
 		return prixJ;
 	}
+	
 	public void setPrixJour(double prixJour) {
 		this.prixJ = prixJour;
 	}
+	
 	public int getNbStock() {
 		return nbStock;
 	}
+	
 	public void setNbStock(int nbStock) {
 		this.nbStock = nbStock;
 	}
-	
-	
 }

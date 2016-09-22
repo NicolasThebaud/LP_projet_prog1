@@ -25,4 +25,8 @@ public class Reflecteur extends AccessoireLumiere {
 	public void setTaille(double taille) {
 		this.taille = taille;
 	}
+	
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock + ", "+this.taille;
+	}
 }

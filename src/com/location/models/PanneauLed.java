@@ -27,4 +27,7 @@ public class PanneauLed extends AccessoireLumiere {
 		this.nbLed = nbLed;
 	}
 
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock + ", "+this.nbLed;
+	}
 }

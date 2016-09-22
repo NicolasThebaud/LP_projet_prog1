@@ -25,7 +25,7 @@ public class FondStudio extends AccessoireLumiere {
 		this.taille = taille;
 	}
 	
-	
-	
-	
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock + ", "+this.taille;
+	}
 }

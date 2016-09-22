@@ -15,4 +15,7 @@ public class Ventouse extends MaterielTournage {
 		super(ref, marque, intitule, prixJ, nbStock);
 	}
 
+	public String toString() {
+		return super.toString();
+	}
 }

@@ -28,5 +28,7 @@ public class Objectif extends Produit {
 		this.listeModel = listeModel;
 	}
 	
-	
+	public String toString() {
+		return this.ref + ", " + this.marque + ", " + this.intitule + ", "+ this.prixJ + ", "+ this.nbStock;
+	}
 }

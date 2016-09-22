@@ -14,8 +14,11 @@ public class Camera extends DispositifAcquisition {
 	 * @param res La résolution de l'appareil
 	 */
 	public Camera(String ref, String marque, String intitule, double prixJ,
-			int nbStock, String typeObj, double megapixel, String res) {
+			int nbStock, Objectif typeObj, double megapixel, String res) {
 		super(ref, marque, intitule, prixJ, nbStock, typeObj, megapixel, res);
 	}
-
+	
+	public String toString() {
+		return super.toString();
+	}
 }

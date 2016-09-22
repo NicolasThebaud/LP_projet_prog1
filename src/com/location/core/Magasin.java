@@ -1,6 +1,7 @@
 package com.location.core;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.location.models.Produit;
 
@@ -27,20 +28,20 @@ public class Magasin {
 		return this.listLoc.add(location);
 	}
 
-	public boolean registerLocation(ArrayList<Location> listLoc) {
-		return this.listLoc.addAll(listLoc);
+	public boolean registerLocation(Location[] listLoc) {
+		return this.listLoc.addAll(new ArrayList<Location>(Arrays.asList(listLoc)));
 	}
 
 	public ArrayList<? extends Produit> getListProd() {
 		return listProd;
 	}
 
-	public boolean registeProduit(Produit produit) {
+	public boolean registerProduit(Produit produit) {
 		return this.listProd.add(produit);
 	}
 
-	public boolean registeProduit(ArrayList<Produit> listProd) {
-		return this.listProd.addAll(listProd);
+	public boolean registerProduit(Produit[] listProd) {
+		return this.listProd.addAll(new ArrayList<Produit>(Arrays.asList(listProd)));
 	}
 	
 	public void affichageLocation() {
