@@ -2,7 +2,9 @@ package com.location.core;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 
+import com.location.controllers.LocationManager;
 import com.location.models.Produit;
 
 public class Magasin {
@@ -28,7 +30,7 @@ public class Magasin {
 		return this.listLoc.add(location);
 	}
 
-	public boolean registerLocation(Location[] listLoc) {
+	public boolean registerLocations(Location[] listLoc) {
 		return this.listLoc.addAll(new ArrayList<Location>(Arrays.asList(listLoc)));
 	}
 
@@ -40,7 +42,7 @@ public class Magasin {
 		return this.listProd.add(produit);
 	}
 
-	public boolean registerProduit(Produit[] listProd) {
+	public boolean registerProduits(Produit[] listProd) {
 		return this.listProd.addAll(new ArrayList<Produit>(Arrays.asList(listProd)));
 	}
 	
@@ -66,5 +68,12 @@ public class Magasin {
 		for(Produit p : this.listProd)
 			if(p.getReference().equals(ref)) return p;
 		throw new Exception("Produit indispo");
+	}
+	
+	public void conclureLocation(Location l) {
+		if(l.getDateFin().before(Calendar.getInstance().getTime()))
+			System.out.println("Warning: La location est retournée hors délai !");
+		if(this.listLoc.remove(l)) LocationManager.conclude(l);
+		else System.out.println("Une erreur s'est produite, veuillez réessayer");
 	}
 }

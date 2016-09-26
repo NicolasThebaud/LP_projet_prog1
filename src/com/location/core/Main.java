@@ -22,7 +22,7 @@ public class Main {
 		Micro mic = new Micro("azerty0", "Sony", "DF780", 12, 30);
 		
 		//Enregistre les produits dans le magasin
-		magasin.registerProduit(new Produit[]{ objectif1, cam, pied, led, mic });
+		magasin.registerProduits(new Produit[]{ objectif1, cam, pied, led, mic });
 		
 		//Création d'un client
 		Client client = new Client("Jean", "Michel", "0102030405");
