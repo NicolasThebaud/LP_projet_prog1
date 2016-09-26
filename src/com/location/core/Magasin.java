@@ -53,6 +53,16 @@ public class Magasin {
 		}
 	}
 	
+	public void affichageLocationByClient(String nom, String prenom) {
+		for(Location l : listLoc)
+			if(l.getClient().getNom().equalsIgnoreCase(nom) && l.getClient().getPrenom().equalsIgnoreCase(prenom)) {
+				System.out.println ("Location n° : "+l.getUUID());
+				for (Produit p : l.getListProd()) {
+					System.out.println (p.getReference()+" : "+p.getIntitule());
+				}
+			}
+	}
+	
 	public Produit getProdByRef(String ref) throws Exception {
 		for(Produit p : this.listProd)
 			if(p.getReference().equals(ref)) return p;
