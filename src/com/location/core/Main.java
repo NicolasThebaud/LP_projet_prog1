@@ -29,10 +29,11 @@ public class Main {
 		Location location;
 		try {
 			//Initialisation des dates de debut/fin
+			//NB : les mois sont définis sur [0;11] on rajoute -1 pour decaler cet interval sur [1;12]
 			Calendar calendar = Calendar.getInstance();
-			calendar.set(2016+1900, 9, 22);
+			calendar.set(2016, 9-1, 22);
 			Date date = new Date(calendar.getTimeInMillis());
-			calendar.set(2016+1900, 10, 22);
+			calendar.set(2016, 10-1, 22);
 			Date date_ = new Date(calendar.getTimeInMillis());
 			
 			//Création d'un contrat de location
@@ -46,6 +47,8 @@ public class Main {
 			
 			magasin.affichageLocation();
 			magasin.affichageLocationByClient("jean", "michel");
+			
+			magasin.conclureLocation(location);
 		} catch (Exception e) {
 			//Une exception est lancée si au moins un produit n'est pas disponible dans le magasin
 			System.out.println("Erreur: La location est impossible, un ou plusieurs produits n'est pas disponible");

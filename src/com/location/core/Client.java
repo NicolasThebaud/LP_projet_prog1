@@ -1,7 +1,10 @@
 package com.location.core;
 
-public class Client {
+import java.io.Serializable;
 
+public class Client implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String nom, prenom, telephone;
 	
 	/**

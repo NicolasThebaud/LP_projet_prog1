@@ -1,5 +1,8 @@
 package com.location.controllers;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -8,7 +11,7 @@ import com.location.core.Location;
 
 public class LocationManager {
 
-	public static HashSet<String> __ID = new HashSet<String>();
+	public static HashSet<String>  __ID = new HashSet<String>();
 	private static Random random = new Random();
 	
 	private static ArrayList<Location> concludedLoc = new ArrayList<Location>();
@@ -29,10 +32,19 @@ public class LocationManager {
 
 	public static void conclude(Location l) {
 		LocationManager.concludedLoc.add(l);
-		archiveLocation(l);
+		try {
+			archiveLocation(l);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	private static void archiveLocation(Location l) {
-		
+	private static void archiveLocation(Location l) throws Exception {
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
+		String date = format.format(l.getDateFin());
+		FileOutputStream fout = new FileOutputStream(date+".loc");
+		ObjectOutputStream oos = new ObjectOutputStream(fout);
+		oos.writeObject(l);
+		oos.close();
 	}
 }

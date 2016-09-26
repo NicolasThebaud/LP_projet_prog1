@@ -1,7 +1,10 @@
 package com.location.models;
 
-public abstract class Produit {
+import java.io.Serializable;
+
+public abstract class Produit implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	protected String ref;
 	protected String marque;
 	protected String intitule;

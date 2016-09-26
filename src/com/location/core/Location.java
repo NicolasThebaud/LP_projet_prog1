@@ -1,14 +1,17 @@
 package com.location.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import com.location.controllers.LocationManager;
-import com.location.models.Produit;
 import java.util.Date;
 
+import com.location.controllers.LocationManager;
+import com.location.models.Produit;
 
-public class Location {
 
+public class Location implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private Date dateDebut;
 	private Date dateFin;
 	private Client client;
