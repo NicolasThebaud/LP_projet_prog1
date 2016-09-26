@@ -42,8 +42,10 @@ public class Main {
 					magasin.getProdByRef("abc123"),
 					magasin.getProdByRef("ghi456")
 			});
+			magasin.registerLocation(location);
 			
-			location.affichage();
+			magasin.affichageLocation();
+			magasin.affichageLocationByClient("jean", "michel");
 		} catch (Exception e) {
 			//Une exception est lancée si au moins un produit n'est pas disponible dans le magasin
 			System.out.println("Erreur: La location est impossible, un ou plusieurs produits n'est pas disponible");

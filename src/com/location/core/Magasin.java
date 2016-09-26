@@ -45,22 +45,21 @@ public class Magasin {
 	}
 	
 	public void affichageLocation() {
-		for (Location l : listLoc) {
-			System.out.println ("Location n° : "+l.getUUID());
-			for (Produit p : l.getListProd()) {
-				System.out.println (p.getReference()+" : "+p.getIntitule());
-			}
+		for(Location l : listLoc) {
+			l.affichage();
+			System.out.println("");
 		}
 	}
 	
 	public void affichageLocationByClient(String nom, String prenom) {
-		for(Location l : listLoc)
+		boolean found = false;
+		for(Location l : listLoc) {
 			if(l.getClient().getNom().equalsIgnoreCase(nom) && l.getClient().getPrenom().equalsIgnoreCase(prenom)) {
-				System.out.println ("Location n° : "+l.getUUID());
-				for (Produit p : l.getListProd()) {
-					System.out.println (p.getReference()+" : "+p.getIntitule());
-				}
-			}
+				l.affichage();
+				found = true;
+			} System.out.println("");
+		}
+		if(!found) System.out.println("Aucune commande trouvée pour "+prenom+" "+nom);
 	}
 	
 	public Produit getProdByRef(String ref) throws Exception {
