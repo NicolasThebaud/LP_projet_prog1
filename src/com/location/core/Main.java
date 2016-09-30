@@ -43,13 +43,18 @@ public class Main {
 					magasin.getProdByRef("abc123"),
 					magasin.getProdByRef("ghi456")
 			});
+			//Une location est liée a un magasin en particulier
 			magasin.registerLocation(location);
 			
+			//Affichage de toutes les locations du magasin
 			magasin.affichageLocation();
+			//OU - affichage des location d'un client particulier
 			magasin.affichageLocationByClient("jean", "michel");
 			
+			//Conclusion d'un contrat de location; la location est sauvegardée dans le systeme ET archivée dans un fichier
 			magasin.conclureLocation(location);
 			
+			//Calcul de la recette totale sur une periode donnée
 			System.out.println(magasin.calculerRecette("201609", "201611"));
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
