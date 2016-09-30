@@ -32,19 +32,35 @@ public class LocationManager {
 
 	public static void conclude(Location l) {
 		LocationManager.concludedLoc.add(l);
-		try {
-			archiveLocation(l);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		try { 
+			SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
+			String date = format.format(l.getDateFin());
+			updateArchive(date); 
+		} catch (Exception e) { e.printStackTrace(); }
 	}
 	
-	private static void archiveLocation(Location l) throws Exception {
+	private static void updateArchive(String dateRef) throws Exception {
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
-		String date = format.format(l.getDateFin());
-		FileOutputStream fout = new FileOutputStream(date+".loc");
+		FileOutputStream fout = new FileOutputStream(dateRef+".loc");
 		ObjectOutputStream oos = new ObjectOutputStream(fout);
-		oos.writeObject(l);
+		ArrayList<Location> monthLocs = new ArrayList<Location>();
+		for(Location l : concludedLoc) {
+			String date = format.format(l.getDateFin());
+			if(date.equals(dateRef)) monthLocs.add(l);
+		}
+		oos.writeObject(monthLocs);
 		oos.close();
+	}
+	
+	public static double getResultFromInterval(String dateDebut, String dateFin) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
+		Double total = 0d;
+		for(Location l : concludedLoc) {
+			String tmpDate = format.format(l.getDateFin());
+			if(Integer.parseInt(tmpDate) < Integer.parseInt(dateFin) 
+					&& Integer.parseInt(tmpDate) > Integer.parseInt(dateDebut))
+				total += l.getMontant();
+		}
+		return total;
 	}
 }

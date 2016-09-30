@@ -76,4 +76,8 @@ public class Magasin {
 		if(this.listLoc.remove(l)) LocationManager.conclude(l);
 		else System.out.println("Une erreur s'est produite, veuillez réessayer");
 	}
+
+	public double calculerRecette(String dateDebut, String dateFin) {
+		return LocationManager.getResultFromInterval(dateDebut, dateFin);
+	}
 }

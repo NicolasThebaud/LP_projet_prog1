@@ -49,7 +49,10 @@ public class Main {
 			magasin.affichageLocationByClient("jean", "michel");
 			
 			magasin.conclureLocation(location);
+			
+			System.out.println(magasin.calculerRecette("201609", "201611"));
 		} catch (Exception e) {
+			e.printStackTrace(System.out);
 			//Une exception est lancée si au moins un produit n'est pas disponible dans le magasin
 			System.out.println("Erreur: La location est impossible, un ou plusieurs produits n'est pas disponible");
 		}
